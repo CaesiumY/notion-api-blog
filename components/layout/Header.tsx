@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <>
       <header className="border-b sticky top-0 bg-white/40 backdrop-blur-md">
-        <div className="p-4 flex flex-row justify-between max-w-4xl mx-auto">
+        <div className="p-4 flex flex-row justify-between items-center max-w-4xl mx-auto">
           <button
             className="p-1 hover:bg-gray-200 rounded-lg"
             onClick={() => setIsMenuOpen(true)}
@@ -30,7 +30,7 @@ const Header = () => {
             </span>
           </button>
           <Link href={"/"}>
-            <h1 className="font-bold text-2xl cursor-pointer select-none">
+            <h1 className="font-extrabold text-2xl cursor-pointer select-none">
               Notion Blog
             </h1>
           </Link>
