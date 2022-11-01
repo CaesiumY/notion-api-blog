@@ -12,6 +12,17 @@ body {
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
+body.isMenuOpen {
+  overflow: hidden;
+  padding-right: 17px;
+}
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  body.isMenuOpen {
+    padding-right: 0;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
