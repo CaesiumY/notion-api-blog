@@ -26,15 +26,17 @@ const CardItem = ({ data }: CardItemsProps) => {
                 className="group-hover:scale-110 transition-all duration-300"
               />
             </div>
-            <div className="flex flex-col gap-2">
-              <h2 className="text-2xl font-bold group-hover:text-blue-700">
+            <div className="flex flex-col gap-1">
+              <h2 className="text-2xl font-bold group-hover:text-blue-500">
                 <IconRenderer icon={icon} />
                 {title}
               </h2>
               {description ? (
                 <p className="text-gray-700">{description}</p>
               ) : null}
-              <time className="text-gray-500 font-light">{published}</time>
+              <time className="text-gray-500 font-light text-sm">
+                {published}
+              </time>
             </div>
           </a>
         </Link>
