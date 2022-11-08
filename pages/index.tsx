@@ -1,74 +1,57 @@
-import type { NextPage } from "next";
-import Image from "next/image";
+import TagList from "components/card/tags/TagList";
+import type { GetStaticProps } from "next";
+import { getAllTags } from "utils/getAllTags";
+import { getDatabaseItems } from "../cms/notion";
+import CardList from "../components/card/CardList";
 import PageHead from "../components/common/PageHead";
-import styles from "../styles/Home.module.css";
+import HeroSection from "../components/Intro/HeroSection";
+import { CardData } from "../types/types";
+import { parseDatabaseItems } from "../utils/parseDatabaseItems";
 
-const Home: NextPage = () => {
+interface HomeProps {
+  data: CardData[];
+  allTags: CardData["tags"];
+}
+
+const Home = ({ data, allTags }: HomeProps) => {
   return (
     <>
       <PageHead />
-      <div className={styles.container}>
-        <main className={styles.main}>
-          <h1 className={styles.title}>
-            Welcome to <a href="https://nextjs.org">Next.js!</a>
-          </h1>
-
-          <p className={styles.description}>
-            Get started by editing{" "}
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
-
-          <div className={styles.grid}>
-            <a href="https://nextjs.org/docs" className={styles.card}>
-              <h2>Documentation &rarr;</h2>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
-
-            <a href="https://nextjs.org/learn" className={styles.card}>
-              <h2>Learn &rarr;</h2>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
-            </a>
-
-            <a
-              href="https://github.com/vercel/next.js/tree/canary/examples"
-              className={styles.card}
-            >
-              <h2>Examples &rarr;</h2>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </a>
-
-            <a
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className={styles.card}
-            >
-              <h2>Deploy &rarr;</h2>
-              <p>
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </p>
-            </a>
+      <HeroSection />
+      <section className="m-4 min-h-[50vh] max-w-7xl mx-auto flex flex-col-reverse md:flex-row gap-8 px-4">
+        <aside className="basis-[15%]">
+          <div className="p-4 rounded-xl shadow-md border">
+            <h2 className="text-2xl font-bold mb-4">Tags</h2>
+            <TagList tags={allTags} />
           </div>
-        </main>
+        </aside>
+        <div className="flex-grow">
+          <h3 className="font-bold text-4xl mb-4">Devlog</h3>
 
-        <footer className={styles.footer}>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{" "}
-            <span className={styles.logo}>
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                width={72}
-                height={16}
-              />
-            </span>
-          </a>
-        </footer>
-      </div>
+          <CardList data={data} />
+        </div>
+      </section>
     </>
   );
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const databaseId = process.env.DATABASE_ID;
+
+  if (!databaseId) throw new Error("DATABASE_ID is not defined");
+
+  const databaseItems = await getDatabaseItems(databaseId);
+
+  const parsedData = parseDatabaseItems(databaseItems);
+
+  const allTags = getAllTags(parsedData);
+
+  return {
+    props: {
+      data: parsedData,
+      allTags,
+    },
+  };
+};
