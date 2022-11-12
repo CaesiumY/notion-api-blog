@@ -8,16 +8,14 @@ interface TagItemProps {
 
 const TagItem = ({ name, color }: TagItemProps) => {
   return (
-    <li>
-      <button
-        className="rounded-xl border px-2 py-1 hover:-translate-y-1 hover:shadow-md transition-all duration-300 font-light text-sm"
-        style={{
-          backgroundColor: COLOR_TABLE[color],
-        }}
-      >
-        {name}
-      </button>
-    </li>
+    <button
+      className="rounded-xl border px-2 py-1 hover:-translate-y-1 hover:shadow-md transition-all duration-300 font-light text-sm"
+      style={{
+        backgroundColor: COLOR_TABLE[color],
+      }}
+    >
+      {name}
+    </button>
   );
 };
 
