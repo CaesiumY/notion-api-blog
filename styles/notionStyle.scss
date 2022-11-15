@@ -2,6 +2,10 @@
   --notion-max-width: 960px;
 }
 
+.notion-app {
+  font: inherit;
+}
+
 .notion-page-icon-hero.notion-page-icon-image .notion-page-icon {
   border-radius: 4rem;
 }
@@ -46,4 +50,9 @@
 
 .notion-page-content-has-aside {
   gap: 1rem;
+  width: 100%;
+}
+
+.notion-aside-table-of-contents {
+  min-width: 200px;
 }

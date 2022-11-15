@@ -78,7 +78,7 @@ const HeaderMenu = ({ isMenuOpen }: HeaderMenuProps) => {
             >
               <Link href={href}>
                 <motion.a
-                  className="flex flex-row gap-2 items-center px-8 py-6"
+                  className="flex flex-row gap-2 items-center px-8 py-6 cursor-pointer"
                   initial={{ x: -60 }}
                   whileInView={{ x: 0 }}
                   transition={{ duration: 0.5, delay: (index + 2) * 0.1 }}
