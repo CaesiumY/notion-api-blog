@@ -1,4 +1,5 @@
 import { Client } from "@notionhq/client";
+import { NotionAPI } from "notion-client";
 
 export const propertyTable = {
   Public: "Public",
@@ -28,4 +29,12 @@ export const getDatabaseItems = async (databaseId: string) => {
   });
 
   return databaseItems.results;
+};
+
+export const reactNotionApi = new NotionAPI();
+
+export const getPageContent = async (pageId: string) => {
+  const recordMap = await reactNotionApi.getPage(pageId);
+
+  return recordMap;
 };
