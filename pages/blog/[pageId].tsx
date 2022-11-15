@@ -1,6 +1,8 @@
 import { getDatabaseItems, getPageContent } from "cms/notion";
+import LoadingSpinner from "components/common/LoadingSpinner";
 import NotionPageRenderer from "components/notion/NotionPageRenderer";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { useRouter } from "next/router";
 import { ExtendedRecordMap } from "notion-types";
 import React from "react";
 
@@ -9,6 +11,15 @@ interface BlogDetailsPageProps {
 }
 
 const BlogDetailsPage = ({ recordMap }: BlogDetailsPageProps) => {
+  const { isFallback } = useRouter();
+
+  if (isFallback)
+    return (
+      <section className="h-screen w-full flex justify-center items-center">
+        <LoadingSpinner />
+      </section>
+    );
+
   return (
     <section>
       <NotionPageRenderer recordMap={recordMap} />
