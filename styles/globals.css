@@ -14,7 +14,7 @@ body {
 
 body.isMenuOpen {
   overflow: hidden;
-  padding-right: 17px;
+  padding-right: var(--scrollbar-width);
 }
 
 @media only screen and (hover: none) and (pointer: coarse) {
