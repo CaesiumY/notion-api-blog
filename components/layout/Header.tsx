@@ -10,6 +10,9 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
+    const scrollbarWidth = window.innerWidth - document.body.clientWidth;
+    document.body.style.setProperty("--scrollbar-width", `${scrollbarWidth}px`);
+
     document.body.className = isMenuOpen ? "isMenuOpen" : "";
   }, [isMenuOpen]);
 
