@@ -1,0 +1,49 @@
+:root {
+  --notion-max-width: 960px;
+}
+
+.notion-page-icon-hero.notion-page-icon-image .notion-page-icon {
+  border-radius: 4rem;
+}
+
+.notion-collection-page-properties,
+.notion-title {
+  text-align: center;
+}
+
+.notion-property-select,
+.notion-property-multi_select {
+  justify-content: center;
+}
+
+.notion-collection-row-property .notion-collection-column-title {
+  display: none;
+}
+
+.notion-aside-table-of-contents-header {
+  align-self: flex-start;
+}
+
+.notion-h {
+  span {
+    display: flex;
+    align-items: center;
+
+    svg {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.notion-page {
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  transform: translateY(-4rem);
+  background-color: white;
+}
+
+.notion-page-content-has-aside {
+  gap: 1rem;
+}
