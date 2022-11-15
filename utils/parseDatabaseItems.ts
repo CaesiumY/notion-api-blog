@@ -25,6 +25,13 @@ export const parseDatabaseItems = (
       Published?.type === "date" ? Published.date?.start ?? "" : "";
     const tags = Tags.type === "multi_select" ? Tags.multi_select : [];
 
+    const expiryTime =
+      item.cover?.type === "file"
+        ? item.cover.file.expiry_time
+        : item.icon?.type === "file"
+        ? item.icon.file.expiry_time
+        : "";
+
     acc.push({
       id: item.id,
       icon: item.icon,
@@ -33,6 +40,7 @@ export const parseDatabaseItems = (
       description,
       published,
       tags,
+      expiryTime,
     });
 
     return acc;

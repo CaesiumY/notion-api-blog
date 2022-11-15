@@ -31,6 +31,14 @@ export const getDatabaseItems = async (databaseId: string) => {
   return databaseItems.results;
 };
 
+export const getPageItem = async (pageId: string) => {
+  const pageItem = await notion.pages.retrieve({
+    page_id: pageId,
+  });
+
+  return pageItem;
+};
+
 export const reactNotionApi = new NotionAPI();
 
 export const getPageContent = async (pageId: string) => {
