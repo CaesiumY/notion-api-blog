@@ -7,6 +7,7 @@ import TagList from "./tags/TagList";
 import { motion } from "framer-motion";
 import { ImageSrcType } from "pages/api/getImageSrc";
 import { IMAGE_LOADING_INDICATOR } from "const/const";
+import LoadingSpinner from "components/common/LoadingSpinner";
 
 interface CardItemsProps {
   data: CardData;
@@ -60,14 +61,17 @@ const CardItem = ({ data }: CardItemsProps) => {
                 alt={title}
                 layout="fill"
                 objectFit="cover"
-                className={`group-hover:scale-110 transition-all duration-300 ${
-                  isLoading ? "animate-pulse" : ""
-                }`}
+                className={`group-hover:scale-110 transition-all duration-300`}
                 onError={getImageSrc}
                 placeholder="blur"
                 blurDataURL={IMAGE_LOADING_INDICATOR}
                 onLoad={() => setIsLoading(false)}
               />
+              {isLoading ? (
+                <div className="absolute top-0 bottom-0 left-0 right-0 flex justify-center items-center">
+                  <LoadingSpinner />
+                </div>
+              ) : null}
             </div>
             <div className="flex flex-col gap-1">
               <h2 className="text-2xl font-bold group-hover:text-blue-500">
