@@ -1,7 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  title?: string;
+  description?: string;
+}
+
+const HeroSection = ({
+  title = "Notion Devlog",
+  description = "Notion Devlog is a blog template built with Next.js and Notion API.",
+}: HeroSectionProps) => {
   return (
     <section>
       <motion.div
@@ -29,11 +37,9 @@ const HeroSection = () => {
           }}
         >
           <h1 className="font-black text-5xl pb-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            Notion Devlog
+            {title}
           </h1>
-          <p>
-            Notion Devlog is a blog template built with Next.js and Notion API.
-          </p>
+          <p>{description}</p>
         </motion.div>
       </motion.div>
     </section>
