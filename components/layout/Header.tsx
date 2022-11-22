@@ -38,9 +38,11 @@ const Header = () => {
             </h1>
           </Link>
           <button className="p-1 hover:bg-gray-200 rounded-lg">
-            <span>
-              <AiOutlineSearch size="2rem" />
-            </span>
+            <Link href={`/search`}>
+              <span>
+                <AiOutlineSearch size="2rem" />
+              </span>
+            </Link>
           </button>
         </div>
       </header>
