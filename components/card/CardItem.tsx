@@ -5,14 +5,24 @@ import { CardData } from "types/types";
 import IconRenderer from "./IconRenderer";
 import TagList from "./tags/TagList";
 import { motion } from "framer-motion";
+import { DEFAULT_BASE64 } from "const/const";
 
 interface CardItemsProps {
   data: CardData;
 }
 
 const CardItem = ({ data }: CardItemsProps) => {
-  const { id, cover, title, description, published, icon, tags, expiryTime } =
-    data;
+  const {
+    id,
+    cover,
+    title,
+    description,
+    published,
+    icon,
+    tags,
+    expiryTime,
+    preview,
+  } = data;
 
   const [coverSrc, setCoverSrc] = useState(cover);
   const [iconSrc, setIconSrc] = useState(icon);
@@ -60,6 +70,8 @@ const CardItem = ({ data }: CardItemsProps) => {
                 objectFit="cover"
                 className="group-hover:scale-110 transition-all duration-300"
                 onError={getImageSrc}
+                placeholder="blur"
+                blurDataURL={preview?.dataURIBase64 ?? DEFAULT_BASE64}
               />
             </div>
             <div className="flex flex-col gap-1">

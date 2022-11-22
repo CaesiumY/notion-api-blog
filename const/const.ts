@@ -13,3 +13,6 @@ export const COLOR_TABLE = {
 
 export const POSTS_PER_PAGE = 9;
 export const PAGINATION_RANGE = 2;
+
+export const DEFAULT_BASE64 =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkqAcAAIUAgUW0RjgAAAAASUVORK5CYII=";

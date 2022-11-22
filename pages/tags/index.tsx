@@ -8,6 +8,7 @@ import React from "react";
 import { CardData } from "types/types";
 import { getAllTags } from "utils/getAllTags";
 import { parseDatabaseItems } from "utils/parseDatabaseItems";
+import { insertPreviewImage } from "utils/previewImage";
 
 interface TagIndexPageProps {
   data: Record<string, CardData[]>;
@@ -51,12 +52,13 @@ export const getStaticProps: GetStaticProps<TagIndexPageProps> = async () => {
   const databaseItems = await getDatabaseItems(databaseId);
 
   const parsedData = parseDatabaseItems(databaseItems);
+  const dataWithPreview = await insertPreviewImage(parsedData);
 
   const allTags = getAllTags(parsedData);
 
   const dataByTag = allTags.reduce<Record<string, CardData[]>>(
     (acc, { name }) => {
-      acc[name] = parsedData
+      acc[name] = dataWithPreview
         .filter(({ tags }) => tags.findIndex((tag) => tag.name === name) !== -1)
         .slice(0, 3);
       return acc;
