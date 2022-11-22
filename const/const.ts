@@ -10,3 +10,6 @@ export const COLOR_TABLE = {
   gray: "#f3f4f6",
   default: "#c8d6e5",
 };
+
+export const POSTS_PER_PAGE = 9;
+export const PAGINATION_RANGE = 2;
