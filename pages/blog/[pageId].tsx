@@ -5,6 +5,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { ExtendedRecordMap } from "notion-types";
 import React from "react";
+import { insertPreviewImageToRecordMap } from "utils/previewImage";
 
 interface BlogDetailsPageProps {
   recordMap: ExtendedRecordMap;
@@ -29,16 +30,20 @@ const BlogDetailsPage = ({ recordMap }: BlogDetailsPageProps) => {
 
 export default BlogDetailsPage;
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps<BlogDetailsPageProps> = async ({
+  params,
+}) => {
   const pageId = params?.pageId;
 
   if (!pageId) throw Error("PageId is not defined");
 
   const recordMap = await getPageContent(pageId.toString());
 
+  const preview_images = await insertPreviewImageToRecordMap(recordMap);
+
   return {
     props: {
-      recordMap,
+      recordMap: { ...recordMap, preview_images },
     },
     revalidate: 10,
   };

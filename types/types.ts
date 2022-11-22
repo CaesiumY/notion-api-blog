@@ -2,6 +2,7 @@ import {
   MultiSelectPropertyItemObjectResponse,
   PageObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
+import { PreviewImageType } from "utils/previewImage";
 
 export interface CardData {
   id: string;
@@ -12,4 +13,5 @@ export interface CardData {
   icon: PageObjectResponse["icon"];
   tags: MultiSelectPropertyItemObjectResponse["multi_select"];
   expiryTime: string;
+  preview?: PreviewImageType;
 }
