@@ -1,10 +1,10 @@
-import { getDatabaseItems, getPageContent } from "cms/notion";
+import { getPageContent } from "cms/notion";
 import LoadingSpinner from "components/common/LoadingSpinner";
 import NotionPageRenderer from "components/notion/NotionPageRenderer";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { ExtendedRecordMap } from "notion-types";
-import React from "react";
+import { getCachedDatabaseItems } from "utils/getCachedDatabaseItems";
 import { insertPreviewImageToRecordMap } from "utils/previewImage";
 
 interface BlogDetailsPageProps {
@@ -54,7 +54,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   if (!databaseId) throw new Error("DATABASE_ID is not defined");
 
-  const databaseItems = await getDatabaseItems(databaseId);
+  const databaseItems = await getCachedDatabaseItems(databaseId);
 
   const paths = databaseItems.map(({ id: pageId }) => ({
     params: {
