@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://notion-api-blog-caesiumy.vercel.app</loc><lastmod>2022-11-29T11:44:01.036Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://notion-api-blog-caesiumy.vercel.app/profile</loc><lastmod>2022-11-29T11:44:01.036Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://notion-api-blog-caesiumy.vercel.app/search</loc><lastmod>2022-11-29T11:44:01.036Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://notion-api-blog-caesiumy.vercel.app/tags</loc><lastmod>2022-11-29T11:44:01.036Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://notion-api-blog-caesiumy.vercel.app/tags/react</loc><lastmod>2022-11-29T11:44:01.036Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://notion-api-blog-caesiumy.vercel.app/tags/front-end</loc><lastmod>2022-11-29T11:44:01.036Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://notion-api-blog-caesiumy.vercel.app/tags/typescript</loc><lastmod>2022-11-29T11:44:01.036Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://notion-api-blog-caesiumy.vercel.app/tags/web</loc><lastmod>2022-11-29T11:44:01.036Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://notion-api-blog-caesiumy.vercel.app/blog/07a1bc22-8e21-44ec-9704-2d993a25525b</loc><lastmod>2022-11-29T11:44:01.036Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://notion-api-blog-caesiumy.vercel.app/blog/59949505-e5d0-4cdf-b0df-623db7a74118</loc><lastmod>2022-11-29T11:44:01.036Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://notion-api-blog-caesiumy.vercel.app/blog/261ee074-9c83-40b0-92b0-a26be61c5eef</loc><lastmod>2022-11-29T11:44:01.036Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://notion-api-blog-caesiumy.vercel.app/blog/464c6789-3ed3-4a80-970a-cf15fd2cceae</loc><lastmod>2022-11-29T11:44:01.036Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://caesiumy.dev</loc><lastmod>2022-11-29T11:46:48.955Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://caesiumy.dev/profile</loc><lastmod>2022-11-29T11:46:48.955Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://caesiumy.dev/search</loc><lastmod>2022-11-29T11:46:48.955Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://caesiumy.dev/tags</loc><lastmod>2022-11-29T11:46:48.955Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://caesiumy.dev/tags/react</loc><lastmod>2022-11-29T11:46:48.955Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://caesiumy.dev/tags/front-end</loc><lastmod>2022-11-29T11:46:48.955Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://caesiumy.dev/tags/typescript</loc><lastmod>2022-11-29T11:46:48.955Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://caesiumy.dev/tags/web</loc><lastmod>2022-11-29T11:46:48.955Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://caesiumy.dev/blog/07a1bc22-8e21-44ec-9704-2d993a25525b</loc><lastmod>2022-11-29T11:46:48.955Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://caesiumy.dev/blog/59949505-e5d0-4cdf-b0df-623db7a74118</loc><lastmod>2022-11-29T11:46:48.955Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://caesiumy.dev/blog/261ee074-9c83-40b0-92b0-a26be61c5eef</loc><lastmod>2022-11-29T11:46:48.955Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://caesiumy.dev/blog/464c6789-3ed3-4a80-970a-cf15fd2cceae</loc><lastmod>2022-11-29T11:46:48.955Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
