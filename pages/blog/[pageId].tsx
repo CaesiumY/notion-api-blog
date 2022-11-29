@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { ExtendedRecordMap } from "notion-types";
 import { getCachedDatabaseItems } from "utils/getCachedDatabaseItems";
 import { insertPreviewImageToRecordMap } from "utils/previewImage";
+import Giscus from "@giscus/react";
 
 interface BlogDetailsPageProps {
   recordMap: ExtendedRecordMap;
@@ -24,6 +25,24 @@ const BlogDetailsPage = ({ recordMap }: BlogDetailsPageProps) => {
   return (
     <section>
       <NotionPageRenderer recordMap={recordMap} />
+      <div className="max-w-4xl mx-auto my-8">
+        <Giscus
+          id="comments"
+          term="blog"
+          repo="CaesiumY/notion-api-blog"
+          repoId="R_kgDOITdSEg"
+          category="General"
+          categoryId="DIC_kwDOITdSEs4CS0Sk"
+          mapping="pathname"
+          strict="0"
+          reactionsEnabled="1"
+          emitMetadata="0"
+          inputPosition="top"
+          theme="light"
+          lang="ko"
+          loading="lazy"
+        />
+      </div>
     </section>
   );
 };
