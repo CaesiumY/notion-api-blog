@@ -1,7 +1,5 @@
 import CardItem from "components/card/CardItem";
-import CardList from "components/card/CardList";
 import { GetStaticProps } from "next";
-import React from "react";
 import { CardData } from "types/types";
 import { getCachedDatabaseItems } from "utils/getCachedDatabaseItems";
 import { parseDatabaseItems } from "utils/parseDatabaseItems";
