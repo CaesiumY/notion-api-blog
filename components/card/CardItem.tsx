@@ -60,6 +60,7 @@ const CardItem = ({ data }: CardItemsProps) => {
       viewport={{
         once: true,
       }}
+      className="list-none"
     >
       <article className="group">
         <Link href={`/blog/${id}`}>
