@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://notion-api-blog-caesiumy.vercel.app/
+Host: https://caesiumy.dev
 
 # Sitemaps
-Sitemap: https://notion-api-blog-caesiumy.vercel.app/sitemap.xml
+Sitemap: https://caesiumy.dev/sitemap.xml
