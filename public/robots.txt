@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://notion-api-blog-caesiumy.vercel.app/
+
+# Sitemaps
+Sitemap: https://notion-api-blog-caesiumy.vercel.app/sitemap.xml
