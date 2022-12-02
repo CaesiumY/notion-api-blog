@@ -14,6 +14,8 @@ const IconRenderer = ({ icon }: IconRendererProps) => {
   return (
     <span className="mr-2 align-middle">
       <Image
+        // for the limit of the free plan, we should turn off the next/image optimization :(
+        unoptimized
         src={icon.type === "external" ? icon.external.url : icon.file.url}
         alt="icon"
         width={24}

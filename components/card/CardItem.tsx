@@ -67,6 +67,8 @@ const CardItem = ({ data }: CardItemsProps) => {
           <a>
             <div className="relative pt-[64%] rounded-lg overflow-hidden mb-4">
               <Image
+                // for the limit of the free plan, we should turn off the next/image optimization :(
+                unoptimized
                 src={coverSrc}
                 alt={title}
                 layout="fill"

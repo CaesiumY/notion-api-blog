@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps<BlogDetailsPageProps> = async ({
     props: {
       recordMap: { ...recordMap, preview_images },
     },
-    revalidate: 10,
+    revalidate: 60,
   };
 };
 
