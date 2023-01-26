@@ -14,7 +14,7 @@ const ProfilePage = ({ recordMap }: ProfilePageProps) => {
     <>
       <PageHead title="내 프로필" />
       <section>
-        <NotionPageRenderer recordMap={recordMap} isProfile />
+        <NotionPageRenderer recordMap={recordMap} />
       </section>
     </>
   );

@@ -19,19 +19,9 @@ const Equation = dynamic(() =>
 
 interface NotionPageRendererProps {
   recordMap: ExtendedRecordMap;
-  isProfile?: boolean;
 }
 
-const NotionPageRenderer = ({
-  recordMap,
-  isProfile,
-}: NotionPageRendererProps) => {
-  const LinkObject = isProfile
-    ? {}
-    : {
-        Link,
-      };
-
+const NotionPageRenderer = ({ recordMap }: NotionPageRendererProps) => {
   return (
     <NotionRenderer
       recordMap={recordMap}
@@ -44,13 +34,13 @@ const NotionPageRenderer = ({
         Code,
         Collection,
         Equation,
-        Image,
+        nextImage: Image,
+        nextLink: Link,
         propertyDateValue: (dateProperty) =>
           dateProperty.data[0][1][0][1].start_date,
         propertySelectValue: ({ option: { id, color, value } }) => (
           <TagItem key={id} color={color} name={value} />
         ),
-        ...LinkObject,
       }}
     />
   );
