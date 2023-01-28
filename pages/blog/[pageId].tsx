@@ -58,11 +58,11 @@ export const getStaticProps: GetStaticProps<BlogDetailsPageProps> = async ({
 
   const recordMap = await getPageContent(pageId.toString());
 
-  const preview_images = await insertPreviewImageToRecordMap(recordMap);
+  // const preview_images = await insertPreviewImageToRecordMap(recordMap);
 
   return {
     props: {
-      recordMap: { ...recordMap, preview_images },
+      recordMap,
     },
     revalidate: 60,
   };
