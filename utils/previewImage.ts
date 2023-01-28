@@ -11,15 +11,19 @@ export const makePreviewImage = async (url: string) => {
     resolveBodyOnly: true,
   });
 
-  const {
-    metadata: { dataURIBase64, originalWidth, originalHeight },
-  } = await lqip(body);
+  try {
+    const {
+      metadata: { dataURIBase64, originalWidth, originalHeight },
+    } = await lqip(body);
 
-  return {
-    dataURIBase64,
-    originalWidth,
-    originalHeight,
-  };
+    return {
+      dataURIBase64,
+      originalWidth,
+      originalHeight,
+    };
+  } catch (error) {
+    return null;
+  }
 };
 
 export type PreviewImageType = Awaited<ReturnType<typeof makePreviewImage>>;

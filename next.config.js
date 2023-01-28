@@ -6,6 +6,7 @@ const nextConfig = {
     domains: ["s3.us-west-2.amazonaws.com", "www.notion.so"],
     // for free plan of vercel, can't use next/image optimization anymore
     unoptimized: true,
+    formats: ["image/webp", "image/avif"],
   },
 };
 
