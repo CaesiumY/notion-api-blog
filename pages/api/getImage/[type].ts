@@ -1,24 +1,30 @@
 import { getPageItem } from "cms/notion";
 import got from "got";
 import type { NextApiRequest, NextApiResponse } from "next";
+import { parseDatabaseItems } from "utils/parseDatabaseItems";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const { id } = req.query;
+  const { type, id } = req.query;
 
   if (!id) throw new Error("No id provided");
 
   const pageItem = await getPageItem(id.toString());
+  const { cover, icon } = parseDatabaseItems([pageItem])[0];
 
-  if (!("properties" in pageItem)) throw new Error("No properties in pageItem");
+  let url = "";
 
-  const cover =
-    pageItem.cover?.type === "external"
-      ? pageItem.cover.external.url
-      : pageItem.cover?.file
-      ? pageItem.cover.file.url
-      : "";
+  switch (type) {
+    case "cover":
+      url = cover;
+      break;
+    case "icon":
+      url = icon?.type === "url" ? icon.url : "";
+      break;
+    default:
+      throw new Error("No type provided");
+  }
 
-  const response = await got(cover, { responseType: "buffer" });
+  const response = await got(url, { responseType: "buffer" });
   const contentType = response.headers["content-type"];
 
   if (!contentType) throw new Error("No content-type in response headers");
