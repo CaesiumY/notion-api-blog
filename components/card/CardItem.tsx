@@ -24,8 +24,12 @@ const CardItem = ({ data }: CardItemsProps) => {
     lastEditedTime,
   } = data;
 
-  const [iconSrc, setIconSrc] = useState(icon);
   const [isLoading, setIsLoading] = useState(true);
+
+  const params = new URLSearchParams({
+    id,
+    lastEditedTime,
+  });
 
   return (
     <motion.li
@@ -48,7 +52,7 @@ const CardItem = ({ data }: CardItemsProps) => {
           <a>
             <div className="relative pt-[64%] rounded-lg overflow-hidden mb-4">
               <Image
-                src={`api/getCover/${id}?lastEditedTime=${lastEditedTime}`}
+                src={`api/getImage/cover?${params.toString()}`}
                 alt={title}
                 layout="fill"
                 objectFit="cover"
@@ -65,7 +69,7 @@ const CardItem = ({ data }: CardItemsProps) => {
             </div>
             <div className="flex flex-col gap-1">
               <h2 className="text-2xl font-bold group-hover:text-blue-500">
-                <IconRenderer icon={iconSrc} />
+                <IconRenderer icon={icon} />
                 {title}
               </h2>
               {description ? (

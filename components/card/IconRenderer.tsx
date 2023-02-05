@@ -1,9 +1,8 @@
 import Image from "next/image";
-import React from "react";
-import { CardData } from "types/types";
+import { IconType } from "types/types";
 
 interface IconRendererProps {
-  icon: CardData["icon"];
+  icon: IconType;
 }
 
 const IconRenderer = ({ icon }: IconRendererProps) => {
@@ -14,9 +13,7 @@ const IconRenderer = ({ icon }: IconRendererProps) => {
   return (
     <span className="mr-2 align-middle">
       <Image
-        // for the limit of the free plan, we should turn off the next/image optimization :(
-        unoptimized
-        src={icon.type === "external" ? icon.external.url : icon.file.url}
+        src={icon.proxyUrl}
         alt="icon"
         width={24}
         height={24}
