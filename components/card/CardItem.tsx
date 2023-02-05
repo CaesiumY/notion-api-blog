@@ -1,13 +1,12 @@
+import LoadingSpinner from "components/common/LoadingSpinner";
+import { DEFAULT_BASE64 } from "const/const";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useCallback, useState } from "react";
+import { useState } from "react";
 import { CardData } from "types/types";
 import IconRenderer from "./IconRenderer";
 import TagList from "./tags/TagList";
-import { motion } from "framer-motion";
-import { ImageSrcType } from "pages/api/getImageSrc";
-import LoadingSpinner from "components/common/LoadingSpinner";
-import { DEFAULT_BASE64 } from "const/const";
 
 interface CardItemsProps {
   data: CardData;
@@ -16,35 +15,17 @@ interface CardItemsProps {
 const CardItem = ({ data }: CardItemsProps) => {
   const {
     id,
-    cover,
     title,
     description,
     published,
     icon,
     tags,
-    expiryTime,
     preview,
+    lastEditedTime,
   } = data;
 
-  const [coverSrc, setCoverSrc] = useState(cover);
   const [iconSrc, setIconSrc] = useState(icon);
   const [isLoading, setIsLoading] = useState(true);
-
-  const getImageSrc = useCallback(async () => {
-    setIsLoading(true);
-
-    const res = await fetch(`api/getImageSrc?id=${id}`);
-    const { cover, icon }: ImageSrcType = await res.json();
-
-    setCoverSrc(cover);
-    setIconSrc(icon);
-  }, [id]);
-
-  useEffect(() => {
-    const isExpired = new Date(expiryTime) < new Date();
-
-    if (isExpired) getImageSrc();
-  }, [expiryTime, getImageSrc]);
 
   return (
     <motion.li
@@ -67,14 +48,11 @@ const CardItem = ({ data }: CardItemsProps) => {
           <a>
             <div className="relative pt-[64%] rounded-lg overflow-hidden mb-4">
               <Image
-                // for the limit of the free plan, we should turn off the next/image optimization :(
-                unoptimized
-                src={coverSrc}
+                src={`api/getCover/${id}?lastEditedTime=${lastEditedTime}`}
                 alt={title}
                 layout="fill"
                 objectFit="cover"
                 className={`group-hover:scale-110 transition-all duration-300`}
-                onError={getImageSrc}
                 placeholder="blur"
                 onLoad={() => setIsLoading(false)}
                 blurDataURL={preview?.dataURIBase64 ?? DEFAULT_BASE64}
