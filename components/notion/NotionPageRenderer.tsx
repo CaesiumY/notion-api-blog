@@ -1,6 +1,5 @@
 import TagItem from "components/card/tags/TagItem";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import Link from "next/link";
 import { ExtendedRecordMap } from "notion-types";
 import { defaultMapImageUrl, NotionRenderer } from "react-notion-x";
