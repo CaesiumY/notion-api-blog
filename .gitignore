@@ -27,6 +27,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env.sample
 
 # vercel
 .vercel
@@ -36,6 +37,5 @@ yarn-error.log*
 next-env.d.ts
 
 # sitemap
-sitemap.xml
-sitemap-*.xml
+sitemap*
 robots.txt
