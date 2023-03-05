@@ -12,7 +12,7 @@
   "dependencies": {
     "@giscus/react": "^2.2.8",
     "@notionhq/client": "^2.2.3",
-    "@vercel/og": "^0.0.20",
+    "@vercel/og": "^0.3.0",
     "framer-motion": "^10.0.2",
     "got": "^12.6.0",
     "lqip-modern": "^2.0.0",
