@@ -1,6 +1,5 @@
 import TagItem from "components/card/tags/TagItem";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import Link from "next/link";
 import { ExtendedRecordMap } from "notion-types";
 import { defaultMapImageUrl, NotionRenderer } from "react-notion-x";
@@ -34,7 +33,7 @@ const NotionPageRenderer = ({ recordMap }: NotionPageRendererProps) => {
         Code,
         Collection,
         Equation,
-        nextImage: Image,
+
         nextLink: Link,
         propertyDateValue: (dateProperty) =>
           dateProperty.data[0][1][0][1].start_date,
