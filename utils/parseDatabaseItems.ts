@@ -39,7 +39,7 @@ export const parseDatabaseItems = (
           item.icon?.type === "external"
             ? item.icon.external.url
             : item.icon.file.url,
-        proxyUrl: `api/getImage/icon?${new URLSearchParams({
+        proxyUrl: `/api/getImage/icon?${new URLSearchParams({
           id,
           lastEditedTime,
         })}`,

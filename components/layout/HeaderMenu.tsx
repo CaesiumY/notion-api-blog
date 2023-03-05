@@ -53,8 +53,7 @@ const HeaderMenu = ({ isMenuOpen }: HeaderMenuProps) => {
           <Image
             src={idk}
             alt="Profile Image"
-            objectFit="contain"
-            layout="fill"
+            className="object-contain absolute w-full h-full"
           />
         </motion.div>
         <motion.h1
@@ -63,9 +62,7 @@ const HeaderMenu = ({ isMenuOpen }: HeaderMenuProps) => {
           whileInView={{ x: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <Link href="/profile">
-            <a>Caesiumy</a>
-          </Link>
+          <Link href="/profile">Caesiumy</Link>
         </motion.h1>
 
         <ul className="mt-8 flex flex-col text-gray-500">
@@ -77,7 +74,7 @@ const HeaderMenu = ({ isMenuOpen }: HeaderMenuProps) => {
               }`}
             >
               <Link href={href}>
-                <motion.a
+                <motion.p
                   className="flex flex-row gap-2 items-center px-8 py-6 cursor-pointer"
                   initial={{ x: -60 }}
                   whileInView={{ x: 0 }}
@@ -85,7 +82,7 @@ const HeaderMenu = ({ isMenuOpen }: HeaderMenuProps) => {
                 >
                   <span>{value.icon}</span>
                   {value.name}
-                </motion.a>
+                </motion.p>
               </Link>
             </li>
           ))}

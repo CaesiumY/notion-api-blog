@@ -11,7 +11,7 @@ const IconRenderer = ({ icon }: IconRendererProps) => {
   if (icon.type === "emoji") return <span>{icon.emoji}</span>;
 
   return (
-    <span className="mr-2 align-middle">
+    <span className="mr-2 inline-block">
       <Image
         src={icon.proxyUrl}
         alt="icon"
