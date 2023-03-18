@@ -8,6 +8,9 @@ const nextConfig = {
     unoptimized: true,
     formats: ["image/webp", "image/avif"],
   },
+  experimental: {
+    appDir: true,
+  },
 };
 
 module.exports = nextConfig;
