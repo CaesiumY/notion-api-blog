@@ -37,8 +37,6 @@ interface HeaderMenuProps {
 const HeaderMenu = ({ isMenuOpen }: HeaderMenuProps) => {
   const pathname = usePathname();
 
-  console.log("pathname :>> ", pathname);
-
   return (
     <aside
       className={`z-50 bg-white fixed top-0 left-0 bottom-0 w-3/5 max-w-sm transition-all duration-500 ${
