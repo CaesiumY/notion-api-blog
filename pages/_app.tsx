@@ -6,6 +6,7 @@ import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import "katex/dist/katex.min.css";
 import "../styles/notionStyle.scss";
+import "pretendard/dist/web/variable/pretendardvariable.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

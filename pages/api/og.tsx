@@ -9,7 +9,6 @@ const handler = async (req: NextRequest) => {
   try {
     const { searchParams } = new URL(req.url);
 
-    // ?title=<title>
     const hasTitle = searchParams.has("title");
     const title = hasTitle
       ? searchParams.get("title")?.slice(0, 100)
@@ -30,13 +29,28 @@ const handler = async (req: NextRequest) => {
               "linear-gradient(90deg, rgba(6,182,212,1) 0%, rgba(59,130,246,1) 100%)",
           }}
         >
-          <div tw="flex justify-center items-center py-8 px-4 text-center w-3/4 bg-white shadow-2xl rounded-2xl">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "2rem 1rem",
+              textAlign: "center",
+              width: "75%",
+              background: "white",
+              boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+              borderRadius: "1.5rem",
+            }}
+          >
             <h1
-              tw="font-black text-8xl mb-2 text-transparent p-8"
               style={{
                 background:
                   "linear-gradient(90deg, rgba(6,182,212,1) 0%, rgba(59,130,246,1) 100%)",
                 backgroundClip: "text",
+                fontFamily: "Pretendard Black",
+                padding: "1rem",
+                color: "transparent",
+                fontSize: "96px",
               }}
             >
               {title}
@@ -51,10 +65,7 @@ const handler = async (req: NextRequest) => {
           {
             name: "Pretendard Black",
             data: await fetch(
-              new URL(
-                "../../assets/Pretendard-Black.subset.woff",
-                import.meta.url
-              )
+              new URL("../../assets/PretendardStd-Black.woff", import.meta.url)
             ).then((res) => res.arrayBuffer()),
           },
         ],
