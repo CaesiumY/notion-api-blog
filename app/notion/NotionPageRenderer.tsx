@@ -1,6 +1,6 @@
 "use client";
 
-import TagItem from "app/blog/tags/TagItem";
+import TagItem from "app/page/card/tags/TagItem";
 import dynamic from "next/dynamic";
 import Image from "next/legacy/image";
 import Link from "next/link";

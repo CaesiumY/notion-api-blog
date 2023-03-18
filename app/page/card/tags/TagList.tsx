@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { CardData } from "types/types";
 import TagItem from "./TagItem";

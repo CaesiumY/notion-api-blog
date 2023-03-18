@@ -1,3 +1,5 @@
+"use client";
+
 import TagList from "app/page/card/tags/TagList";
 import { DEFAULT_BASE64 } from "const/const";
 import { motion } from "framer-motion";

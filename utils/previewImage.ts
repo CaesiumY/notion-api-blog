@@ -41,9 +41,11 @@ export const insertPreviewImage = async (
 export const insertPreviewImageToRecordMap = async (
   recordMap: ExtendedRecordMap
 ): Promise<Record<string, PreviewImageType>> => {
-  const urls = getPageImageUrls(recordMap, {
-    mapImageUrl: defaultMapImageUrl,
-  });
+  // const urls = getPageImageUrls(recordMap, {
+  //   mapImageUrl: defaultMapImageUrl,
+  // });
+
+  const urls = Object.values(recordMap.signed_urls);
 
   const previewImageMap = await Promise.all(
     urls.map(async (url) => [url, await makePreviewImage(url)])
